@@ -12,6 +12,9 @@ char ch='1';
 //wavefront .obj loader code begins
 
 std::vector<GLfloat> vertices;
+
+// This is the identifier for your vertex buffer
+GLuint vbo;
 void loadObj(char *fname)
 {
     FILE *fp;
@@ -45,15 +48,13 @@ void loadObj(char *fname)
         }
         glEnd();
     }
-    // This is the identifier for your vertex buffer
-    GLuint vbo;
+
     // This creates our identifier and puts it in vbo
     glGenBuffers(1, &vbo);
     // This binds our vbo
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     // This hands the vertices into the vbo and to the rendering pipeline
-    GLfloat verc[] = vertices;
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), verc, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), &vertices, GL_STATIC_DRAW);
     glPopMatrix();
     glEndList();
     fclose(fp);
@@ -87,6 +88,19 @@ void display(void)
     glLoadIdentity();
     drawElephant();
     glutSwapBuffers(); //swap the buffers
+    // "Enable a port" to the shader pipeline
+    glEnableVertexAttribArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    // pass information about how vertex array is composed
+    glVertexAttribPointer(0, // same as in glEnableVertexAttribArray(0)
+                          4, // # of coordinates that build a vertex
+                          GL_FLOAT, // data type
+                          GL_FALSE, // normalized?
+                          0,        // stride
+                          (void*)0);// vbo offset
+    
+    glDrawArrays(GL_LINES, 0, 2);
+    glDisableVertexAttribArray(0);
 }
 int main(int argc,char **argv)
 {
