@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		92B7DAE51E9B8D54002D5BDD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92B7DAE41E9B8D54002D5BDD /* main.cpp */; };
+		92B7DAED1E9B8DF6002D5BDD /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B7DAEC1E9B8DF6002D5BDD /* OpenGL.framework */; };
+		92B7DAEF1E9B9036002D5BDD /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B7DAEE1E9B9036002D5BDD /* GLUT.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,11 @@
 /* Begin PBXFileReference section */
 		92B7DAE11E9B8D54002D5BDD /* Grafika */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Grafika; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B7DAE41E9B8D54002D5BDD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		92B7DAEC1E9B8DF6002D5BDD /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		92B7DAEE1E9B9036002D5BDD /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		92B7DAF01E9B9CCA002D5BDD /* tiny_obj_loader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tiny_obj_loader.h; sourceTree = "<group>"; };
+		92B7DAF11E9BA5BD002D5BDD /* dragon.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = dragon.obj; sourceTree = "<group>"; };
+		92B7DAF21E9BA6B7002D5BDD /* porsche.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = porsche.obj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B7DAEF1E9B9036002D5BDD /* GLUT.framework in Frameworks */,
+				92B7DAED1E9B8DF6002D5BDD /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +52,7 @@
 			children = (
 				92B7DAE31E9B8D54002D5BDD /* Grafika */,
 				92B7DAE21E9B8D54002D5BDD /* Products */,
+				92B7DAEB1E9B8DF6002D5BDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +68,20 @@
 			isa = PBXGroup;
 			children = (
 				92B7DAE41E9B8D54002D5BDD /* main.cpp */,
+				92B7DAF01E9B9CCA002D5BDD /* tiny_obj_loader.h */,
+				92B7DAF11E9BA5BD002D5BDD /* dragon.obj */,
+				92B7DAF21E9BA6B7002D5BDD /* porsche.obj */,
 			);
 			path = Grafika;
+			sourceTree = "<group>";
+		};
+		92B7DAEB1E9B8DF6002D5BDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92B7DAEE1E9B9036002D5BDD /* GLUT.framework */,
+				92B7DAEC1E9B8DF6002D5BDD /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
